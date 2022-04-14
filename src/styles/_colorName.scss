@@ -1,0 +1,36 @@
+.color-name {
+  display: flex;
+}
+
+.color-name__letter {
+  color: #191919;
+  font-size: 3em;
+  font-weight: bold;
+  height: 64px;
+  width: 64px;
+  display: flex;
+  justify-content: center;
+  animation-name: letterAnim;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes letterAnim {
+  from { 
+    margin: 0 32px;
+    opacity: 0;
+  }
+  to { 
+    margin: 0 0px;
+    opacity: .8;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .color-name__letter {
+    font-size: 1.5em;
+    font-weight: bold;
+    height: 32px;
+    width: 32px;
+  }
+}
