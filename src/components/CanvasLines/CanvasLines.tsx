@@ -24,7 +24,7 @@ const CanvasLines:React.FC<CanvasLinesProps> = () => {
 
     // SETTINGS
     let w = displayCanvas.width = window.innerWidth;
-    let h = displayCanvas.height = window.innerHeight
+    let h = displayCanvas.height = window.innerHeight;
     const minDist = 10;
     const maxDist = 30;
     const initialWidth = 15;
@@ -181,7 +181,7 @@ const CanvasLines:React.FC<CanvasLinesProps> = () => {
   }
   
   return (
-    <canvas ref={ canvas }></canvas>
+    <canvas className="canvas-lines" ref={ canvas }></canvas>
   );
 }
 export default CanvasLines;

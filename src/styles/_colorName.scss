@@ -10,23 +10,13 @@
   width: 64px;
   display: flex;
   justify-content: center;
-  animation-name: letterAnim;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
+  opacity: .8;
+  // animation-name: letterAnim;
+  // animation-duration: 1s;
+  // animation-fill-mode: forwards;
 }
 
-@keyframes letterAnim {
-  from { 
-    margin: 0 32px;
-    opacity: 0;
-  }
-  to { 
-    margin: 0 0px;
-    opacity: .8;
-  }
-}
-
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 420px) {
   .color-name__letter {
     font-size: 1.5em;
     font-weight: bold;

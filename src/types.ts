@@ -58,3 +58,18 @@ export type Line = {
   parent?: Line,
   dead: boolean
 };
+
+export type Project = {
+  name: string,
+  poster: string,
+  animation: string,
+  description: string,
+  github: string,
+  live: string,
+  badges: Array<string>
+};
+
+export type Badge = {
+  text: string,
+  logo: string
+};

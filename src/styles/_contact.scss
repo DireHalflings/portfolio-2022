@@ -1,0 +1,137 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+.contact__left, .contact__right { 
+  flex: 1;
+}
+
+.contact-card__row {
+  display: flex;
+  gap: 3em;
+  font-size: 18pt;
+}
+
+.contact-card-row__label {
+  flex: 1;
+  font-weight: 700;
+}
+
+.contact-card-row__text {
+  flex: 2;
+}
+
+.contact-card-row__icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  flex: .5;
+}
+
+.contact-card-row__phone-icon, .contact-card-row__email-icon {
+  color: #75a7ab;
+  cursor: pointer;
+}
+
+.contact-card-row__copy-icon {
+  color: #75a7ab;
+  cursor: pointer;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.contact-form__input {
+  display: flex;
+  flex-direction: column;
+  font-size: 16pt;
+}
+
+.contact-form-input__text {
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 14pt;
+}
+
+.contact-form-input__text:focus {
+  outline: 2px solid rgba(20, 152, 228, 0.795);
+  outline-offset: -2px;
+}
+
+.contact-form-input__text-area {
+  resize: vertical;
+  min-height: 128px;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 14pt;
+}
+
+.contact-form-input__text-area:focus {
+  outline: 2px solid rgba(20, 152, 228, 0.795);
+  border-radius: 8px;
+}
+
+.contact-form__error {
+  font-size: 10pt;
+  font-weight: 300;
+  color: red;
+  font-style: italic;
+}
+
+.contact-form__submit {
+  width: 128px;
+  padding: 8px 16px;
+  color: white;
+  background-color: #0fabc6;
+  font-size: 16pt;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 8px;
+  cursor: default;
+}
+
+.inactive {
+  filter: grayscale(1);
+  cursor: default;
+}
+
+.contact-form__submit:hover {
+  color:#0fabc6;
+  background-color: white;
+  outline: 3px solid #0fabc6;
+}
+
+.inactive:hover {
+  background-color: #0fabc6;
+  color: white;
+  outline: none;
+}
+
+.submitted-message__check-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submitted-message__check {
+  background-color: #a2ca42;
+  padding: 16px;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  font-size: 24pt;
+  margin-right: 16px;
+}

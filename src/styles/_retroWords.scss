@@ -1,0 +1,78 @@
+.retro-words {  
+  --color-primary: #568bd6;
+  --color-secondary: #4076c2;
+  --color-tertiary: #194d97;
+  --color-quaternary: #0d3469;
+  --color-quinary: #020d1b;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.retro-words__text {
+  text-shadow: none;
+  opacity: 1;
+  font-family: canada-type-gibson, sans-serif;
+  font-weight: 400;
+  font-style: bold;
+  text-transform: uppercase;
+  font-size: calc(2rem + 5vw);
+  text-align: center;
+  margin: 0;
+  color: var(--color-primary);
+  animation: shadows 2s ease-in;
+  animation-fill-mode: forwards;
+  letter-spacing: 0.4rem;
+}
+
+@keyframes shadows {
+  0% {
+    color: rgba(0,0,0,0);
+    text-shadow: none;
+  }
+  10% {
+    color: rgba(0,0,0,0);
+    text-shadow: 64px 64px 0 var(--color-quinary);
+  }
+  20% {
+    color: rgba(0,0,0,0);
+    text-shadow: 48px 48px 0 var(--color-quaternary), 64px 64px 0 var(--color-quinary);
+  }
+  30% {
+    color: rgba(0,0,0,0);
+    text-shadow: 32px 32px 0 var(--color-tertiary), 48px 48px 0 var(--color-quaternary), 64px 64px 0 var(--color-quinary);
+  }
+  40% {
+    color: rgba(0,0,0,0);
+    text-shadow: 16px 16px 0 var(--color-secondary), 32px 32px 0 var(--color-tertiary), 48px 48px 0 var(--color-quaternary), 64px 64px 0 var(--color-quinary);
+  }
+  45% {
+    color: rgba(0,0,0,0);
+    text-shadow: 16px 16px 0 var(--color-secondary), 32px 32px 0 var(--color-tertiary), 48px 48px 0 var(--color-quaternary), 64px 64px 0 var(--color-quinary);
+  }
+  50% {
+    color: var(--color-primary);
+    text-shadow: 16px 16px 0 var(--color-secondary), 32px 32px 0 var(--color-tertiary), 48px 48px 0 var(--color-quaternary), 64px 64px 0 var(--color-quinary);
+  }
+  70% {
+    color: var(--color-primary);
+    text-shadow: 16px 16px 0 var(--color-secondary), 32px 32px 0 var(--color-tertiary), 48px 48px 0 var(--color-quaternary);
+  }
+  80% {
+    color: var(--color-primary);
+    text-shadow: 16px 16px 0 var(--color-secondary), 32px 32px 0 var(--color-tertiary);
+  }
+  90% {
+    color: var(--color-primary);
+    text-shadow: 16px 16px 0 var(--color-secondary);
+  }
+  100% {
+    color: var(--color-primary);
+    text-shadow: none;
+  }
+}

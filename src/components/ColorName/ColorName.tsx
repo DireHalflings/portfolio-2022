@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ColorLetter from './ColorLetter';
 
 type ColorNameProps = {
@@ -15,7 +15,6 @@ const colorDict: Array<string> = [
 ];
 
 const ColorName:React.FC<ColorNameProps> = ({ text, offSet }) => {
-
   const getColor = (i: number) => {
     return colorDict[(i + offSet)%colorDict.length];
   }

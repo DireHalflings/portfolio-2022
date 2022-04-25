@@ -1,0 +1,128 @@
+.home {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.home__main-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+}
+
+.main-title__buttons {
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  margin-top: 64px;
+}
+
+.home__upper, .home__lower {
+  display: flex;
+  width: 400px;
+  justify-content: center;
+}
+
+.home__upper .color-name, .home__lower .color-name {
+  animation-name: letterAnim;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.home__upper {
+  align-items: flex-end;
+  animation-name: letterSlideTop;
+  animation-duration: .5s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  .color-name__letter {
+    align-items: flex-end;
+  }
+}
+
+.home__lower {
+  animation-name: letterSlideBottom;
+  animation-duration: .5s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  .color-name__letter {
+    align-items: flex-start;
+  }
+}
+
+.home__tag-line {
+  color: #ffffff;
+  opacity: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24pt;
+  animation-name: tagLineAnim;
+  animation-duration: .5s;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.canvas-bg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+@keyframes letterSlideTop {
+  from { padding-right: 0em; }
+  to { padding-right: 4em; }
+}
+
+@keyframes letterSlideBottom {
+  from { padding-left: 0em; }
+  to { padding-left: 4em; }
+}
+
+@keyframes letterAnim {
+  from { 
+    gap: 32px;
+    opacity: 0;
+  }
+  to { 
+    gap: 0px;
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+
+  .main-title__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home__tag-line {
+    font-size: 14pt;
+  }
+
+  @keyframes letterSlideTop {
+    from { padding-right: 0em; }
+    to { padding-right: 2em; }
+  }
+
+  @keyframes letterSlideBottom {
+    from { padding-left: 0em; }
+    to { padding-left: 2em; }
+  }
+}

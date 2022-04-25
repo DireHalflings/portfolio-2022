@@ -3,7 +3,6 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
-  overflow: hidden;
 }
 
 body {
@@ -16,143 +15,16 @@ a {
 }
 
 .App {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   color: white;
-}
-
-.App__main-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.main-title__about-btn, .main-title__work-btn {
-  
-  display: flex;
-  margin-right: 3em;
-  font-weight: bold;
-  padding: 8px;
-  transition: 1s;
-  outline: 1px solid rgba(255, 255, 255, 0);
-  cursor: pointer;
-  opacity: 0;
-  animation-name: tagLineAnim;
-  animation-duration: .5s;
-  animation-delay: 1.5s;
-  animation-fill-mode: forwards;
-}
-
-.main-title__about-btn:hover {
-  outline: 1px solid white;
-
-  .about-btn__icon {
-    opacity: 1;
-  }
-}
-
-.about-btn__icon {
-  opacity: 0;
-  transition: 1s;
-  color: white;
-  padding: 0 8px;
-}
-
-.main-title__work-btn {
-  margin-left: 3em;
-  font-weight: bold;
-}
-
-.main-title__work-btn:hover {
-  outline: 1px solid white;
-
-  .about-btn__icon {
-    opacity: 1;
-  }
-}
-
-.App__upper, .App__lower {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-
-.App__upper {
-  align-items: flex-end;
-  animation-name: letterSlideTop;
-  animation-duration: .5s;
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
-  .color-name__letter {
-    align-items: flex-end;
-  }
-}
-
-.App__lower {
-  animation-name: letterSlideBottom;
-  animation-duration: .5s;
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
-  .color-name__letter {
-    align-items: flex-start;
-  }
-}
-
-.App__tag-line {
-  color: #ffffff;
-  opacity: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  font-weight: bold;
-  font-size: 24pt;
-  animation-name: tagLineAnim;
-  animation-duration: .5s;
-  animation-delay: 1.5s;
-  animation-fill-mode: forwards;
-}
-
-.canvas-bg {
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-}
-
-@keyframes letterSlideTop {
-  from { padding-right: 0em; }
-  to { padding-right: 4em; }
-}
-
-@keyframes letterSlideBottom {
-  from { padding-left: 0em; }
-  to { padding-left: 4em; }
-}
-
-@keyframes tagLineAnim {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@media only screen and (max-width: 400px) {
-  .App__tag-line {
-    font-size: 16pt;
-  }
-
-  @keyframes letterSlideTop {
-    from { padding-right: 0em; }
-    to { padding-right: 2em; }
-  }
-
-  @keyframes letterSlideBottom {
-    from { padding-left: 0em; }
-    to { padding-left: 2em; }
-  }
 }
 
 @import './colorName';
 @import './fractalFolder';
+@import './portfolio';
+@import './home';
+@import './retroWords';
+@import './homePageButton';
+@import './pageWrapper';
+@import './contact';
+@import './portfolioList';
+@import './techBadge';

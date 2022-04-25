@@ -1,0 +1,59 @@
+.main-title__about-btn, .main-title__work-btn, .main-title__contact-btn {
+  background-color: rgba(0,0,0,0);
+  color: white;
+  font-size: 12pt;
+  text-transform: uppercase;
+  border: none;
+  white-space: nowrap;
+  display: flex;
+  margin-right: 3em;
+  font-weight: bold;
+  padding: 8px;
+  transition: 1s;
+  outline: 1px solid rgba(255, 255, 255, 0);
+  cursor: pointer;
+  opacity: 0;
+  animation-name: tagLineAnim;
+  animation-duration: .5s;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+
+  &:hover {
+    outline: 1px solid white;
+    opacity: 1;
+    .about-btn__icon, .contact-btn__icon, .work-btn__icon {
+      opacity: 1;
+    }
+  }
+}
+
+.about-btn__icon, .contact-btn__icon, .work-btn__icon {
+  opacity: 0;
+  transition: 1s;
+  color: white;
+  padding: 0 8px;
+}
+
+.main-title__contact-btn {
+  margin-top: 64px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes tagLineAnim {
+  from { 
+    opacity: 0;
+  }
+  to { 
+    opacity: 1; 
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .center-btn, .right-btn, .left-btn {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 138px;
+  }
+}

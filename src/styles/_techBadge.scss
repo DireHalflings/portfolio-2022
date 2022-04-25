@@ -1,0 +1,35 @@
+.tech-badge-container {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 4px;
+  margin: 4px 0;
+  cursor: pointer;
+
+  &:hover {
+    outline: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+.tech-badge {
+  display: flex;
+  background-color: #4e4e4e;
+  font-size: 10pt;
+  align-items: center;
+  padding: 2px;
+  padding-right: 5px;
+}
+
+.tech-badge__logo {
+  display: flex;
+  align-items: center;
+}
+
+.tech-badge__logo-img {
+  height: 16px;
+  padding: 0 2px;
+  object-fit: cover;
+}
+
+.tech-badge__text {
+  white-space: nowrap;
+}
