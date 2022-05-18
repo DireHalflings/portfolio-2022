@@ -1,4 +1,4 @@
-.tech-badge-container {
+.filter-button-container {
   display: inline-block;
   overflow: hidden;
   border-radius: 4px;
@@ -11,30 +11,30 @@
   }
 }
 
-.tech-badge {
+.filter-button {
   display: flex;
   background-color: #4e4e4e;
-  font-size: 10pt;
+  font-size: 14pt;
   align-items: center;
   padding: 2px;
   padding-right: 5px;
 }
 
-.tech-badge__logo {
+.filter-button__logo {
   display: flex;
   align-items: center;
 }
 
-.tech-badge__logo-img {
-  height: 16px;
-  padding: 0 2px;
+.filter-button__logo-img {
+  height: 32px;
+  padding: 4px 4px;
   object-fit: cover;
 }
 
-.tech-badge__text {
+.filter-button__text {
   white-space: nowrap;
 }
 
-.tech-badge-container.selected {
+.filter-button-container.selected {
   outline: 1px solid white;
 }

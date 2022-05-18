@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, MutableRefObject } from 'react';
 
 export const useWindowSize = () => {
   // Initialize state with undefined width/height so server and client renders match
@@ -42,4 +42,26 @@ export const useMediaQuery = (query: string) => {
   }, [matches, query]);
 
   return matches;
+}
+
+export const useOnScreen = <T extends Element>(ref: MutableRefObject<T>, rootMargin: string = "0px"): boolean => {
+  const [isIntersecting, setIntersecting] = useState<boolean>(false);
+  useEffect(() => {
+    const curRef = ref.current;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIntersecting(entry.isIntersecting);
+      },
+      {
+        rootMargin,
+      }
+    );
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => {
+      observer.unobserve(curRef);
+    };
+  }, []);
+  return isIntersecting;
 }

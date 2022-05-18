@@ -1,0 +1,21 @@
+.mobile-menu__icon {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.mobile-menu-icon__line {
+  background-color: white;
+  width: 48px;
+  height: 6px;
+  border-radius: 2px;
+}

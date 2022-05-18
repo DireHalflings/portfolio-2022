@@ -1,14 +1,15 @@
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { fadeAnim } from '../../pages/animations/animations';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ColorName from '../ColorName/ColorName';
+import MobileNav from '../MobileNav/MobileNav';
 
 type PageWrapperProps = {
-  
+  header: string
 };
 
-const PageWrapper:React.FC<PageWrapperProps> = ({ children }) => {
+const PageWrapper:React.FC<PageWrapperProps> = ({ children, header }) => {
   
   return (
     <div className="page-wrapper">
@@ -28,10 +29,14 @@ const PageWrapper:React.FC<PageWrapperProps> = ({ children }) => {
           <Link to ="/Portfolio">Portfolio</Link>
         </div>
       </div>
-      <motion.div variants={ fadeAnim } exit="exit" initial="initial" animate="animate" className="page-wrapper__body">
-        { children }
-      </motion.div>
-      
+      <AnimatePresence>
+        <motion.div variants={ fadeAnim } exit="exit" initial="initial" animate="animate" className="page-wrapper__body">
+          { children }
+        </motion.div>
+      </AnimatePresence>
+      <div className="page-wrapper__mobile-nav">
+        <MobileNav />
+      </div>
     </div>
   )
 }

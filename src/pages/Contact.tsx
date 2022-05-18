@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm, SubmitHandler } from "react-hook-form";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faPhone, faCopy, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import PageTitle from '../components/PageTitle/PageTitle';
 
 type ContactProps = {
   
@@ -33,43 +34,23 @@ const Contact:React.FC<ContactProps> = () => {
 
   return (
     <div className="contact">
-      <h1>CONTACT</h1>
+      <PageTitle text="Contact" />
       <div className="contact-content">
         <div className="contact__left">
           <div className="contact-card">
             <div className="contact-card__row">
-              <div className="contact-card-row__label">
-                PHONE:
-              </div>
               <div className="contact-card-row__text">
-                562.286.1576
-              </div>
-              <div className="contact-card-row__icons">
-                <FontAwesomeIcon className="contact-card-row__phone-icon" icon={ faPhone } title="Call" />
-                <FontAwesomeIcon className="contact-card-row__copy-icon" icon={ faCopy } title="Copy" />
+                <a href="tel:562-286-1576">562.286.1576</a>
               </div>
             </div>
             <div className="contact-card__row">
-              <div className="contact-card-row__label">
-                EMAIL:
-              </div>
               <div className="contact-card-row__text">
-                BrysonTTaylor@gmail.com
-              </div>
-              <div className="contact-card-row__icons">
-                <FontAwesomeIcon className="contact-card-row__email-icon" icon={ faEnvelope } title="Email" />
-                <FontAwesomeIcon className="contact-card-row__copy-icon" icon={ faCopy } title="Copy" />
+                <a href="mailto:brysonttaylor@gmail.com">BrysonTTaylor@gmail.com</a>
               </div>
             </div>
             <div className="contact-card__row">
-              <div className="contact-card-row__label">
-                LINKEDIN:
-              </div>
               <div className="contact-card-row__text">
-                <a href="https://www.linkedin.com/in/bryson-taylor/">linkedin.com/in/bryson-taylor</a>
-              </div>
-              <div className="contact-card-row__icons">
-                <FontAwesomeIcon className="contact-card-row__copy-icon" icon={ faCopy } title="Copy" />
+                <a href="https://www.linkedin.com/in/bryson-taylor/" target="_blank" rel="noreferrer">linkedin.com/in/bryson-taylor</a>
               </div>
             </div>
           </div>
@@ -87,7 +68,14 @@ const Contact:React.FC<ContactProps> = () => {
                 </div>
               </div>
             ) : (
-              <form className="contact-form" onSubmit={ handleSubmit(onSubmit) }>
+              <form 
+                className="contact-form" 
+                action="mailto:brysonttaylor@gmail.com"
+                method="POST"
+                encType="multipart/form-data"
+                name="EmailForm"
+                onSubmit={ handleSubmit(onSubmit) }
+              >
                 <div className="contact-form__input">
                   <label htmlFor="name">Name:</label>
                   <input className="contact-form-input__text" type="text" placeholder="Your Name" {...register("name", { required: true })} />

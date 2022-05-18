@@ -9,8 +9,12 @@
   gap: 32px;
 }
 
-.contact__left, .contact__right { 
+.contact__left { 
   flex: 1;
+}
+
+.contact__right {
+  flex: 2;
 }
 
 .contact-card__row {
@@ -59,7 +63,7 @@
 }
 
 .contact-form-input__text {
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 4px 8px;
   font-size: 14pt;
 }
@@ -72,7 +76,7 @@
 .contact-form-input__text-area {
   resize: vertical;
   min-height: 128px;
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 4px 8px;
   font-size: 14pt;
 }
@@ -134,4 +138,10 @@
   place-items: center;
   font-size: 24pt;
   margin-right: 16px;
+}
+
+@media only screen and (max-width: 420px) {
+  .contact-content {
+    flex-direction: column;
+  }
 }

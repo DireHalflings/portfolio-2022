@@ -11,6 +11,8 @@ import typescriptLogo from '../../resources/images/techBadgeImages/typescriptLog
 import sassLogo from '../../resources/images/techBadgeImages/sassLogo.png';
 import pythonLogo from '../../resources/images/techBadgeImages/pythonLogo.png';
 import javascriptLogo from '../../resources/images/techBadgeImages/javascriptLogo.png';
+import backendLogo from '../../resources/images/techBadgeImages/backendLogo.png';
+import frontendLogo from '../../resources/images/techBadgeImages/frontendLogo.png';
 
 const techBadges: Array<Badge> = [
   {
@@ -59,11 +61,15 @@ const techBadges: Array<Badge> = [
   },
   {
     text: "Back-end",
-    logo: ""
+    logo: backendLogo
   },
   {
     text: "JavaScript",
     logo: javascriptLogo
+  },
+  {
+    text: "Front-end",
+    logo: frontendLogo
   }
 ];
 

@@ -1,16 +1,31 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode, faCodeBranch } from '@fortawesome/free-solid-svg-icons';
 import { Badge, Project } from '../../types';
 import badgesData from '../../resources/data/techBadges';
 import TechBadge from '../TechBadge/TechBadge';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion, usePresence } from 'framer-motion';
+import { useOnScreen } from '../../hooks';
 
 type PortfolioRowProps = {
-  project: Project
+  project: Project,
+  filters: Array<string>,
+  setFilters: React.Dispatch<React.SetStateAction<string[]>>
 };
 
-const projectRowAnim = {
+const projectRowInitialAnim = {
+  initial: {
+    x: -150,
+    opacity: 0
+  },
+  animate: {
+    x: -150,
+    opacity: 0
+  },
+  tranisition: { type: 'tween', duration: .5 }
+}
+
+const projectRowFadeInAnim = {
   initial: { 
     x: -150,
     opacity: 0 
@@ -20,14 +35,32 @@ const projectRowAnim = {
     opacity: 1
   },
   tranisition: { type: 'tween', duration: .5 }
-};
+}
 
-const PortfolioRow:React.FC<PortfolioRowProps> = ({ project }) => {
+const projectRowFadeOutAnim = {
+  initial: { 
+    x: 0,
+    opacity: 1 
+  },
+  animate: {
+    x: -150,
+    opacity: 0
+  },
+  tranisition: { type: 'tween', duration: .5 }
+}
+
+const PortfolioRow:React.FC<PortfolioRowProps> = ({ project, filters, setFilters }) => {
+  const [rowAnim, setRowAnim] = useState(projectRowInitialAnim);
 
   const { animation, poster, name, description, github, live, badges } =project;
 
-  console.log('poster', poster);
-  console.log('animation', animation);
+  const portfolioRow: any = useRef<HTMLDivElement>();
+  const onScreen: boolean = useOnScreen(portfolioRow, "-100px");
+
+  useEffect(() => {
+    if (onScreen) setRowAnim(projectRowFadeInAnim);
+    else setRowAnim(projectRowFadeOutAnim);
+  }, [onScreen]);
 
   const handleTechBadges = () => {
     const tempBadges: Array<Badge> = [];
@@ -41,7 +74,14 @@ const PortfolioRow:React.FC<PortfolioRowProps> = ({ project }) => {
   }
   
   return (
-    <motion.div className="portfolio-list__row" variants={ projectRowAnim } initial="initial" whileInView={ projectRowAnim.animate } transition={ projectRowAnim.tranisition }>
+    <motion.div 
+      className="portfolio-list__row" 
+      variants={ rowAnim } 
+      initial="initial"
+      animate="animate"
+      transition={ rowAnim.tranisition }
+      ref={ portfolioRow }
+    >
       <div className="project-row__image-container">
         <div className="project-row__image-menu">
           <div className="image-menu__live">
@@ -70,17 +110,11 @@ const PortfolioRow:React.FC<PortfolioRowProps> = ({ project }) => {
         </div>
         <div className="project-row__tech-badges">
           {
-            handleTechBadges().map(({ text, logo }, i) => <TechBadge key={text + i} text={ text } logo={ logo } />)
+            handleTechBadges().map(({ text, logo }, i) => <TechBadge key={text + i} text={ text } logo={ logo } filters={ filters } setFilters={ setFilters } />)
           }
         </div>
         <div className="project-row__description">
           { description }
-        </div>
-        <div className="project-row__github">
-          { github }
-        </div>
-        <div className="project-row__live">
-          { project.live }
         </div>
       </div>
     </motion.div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import PageTitle from '../components/PageTitle/PageTitle';
 
 type AboutProps = {
   
@@ -8,7 +9,7 @@ const About:React.FC<AboutProps> = () => {
   
   return (
     <div>
-      <h1>ABOUT PAGE</h1>
+      <PageTitle text="About" />
       <p>Lorem ipsum dolor sit amet.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aspernatur iste fugiat tempore nisi expedita, officiis debitis fuga modi! Quasi quos maxime architecto tempore eveniet porro error illo praesentium earum?
       Quaerat assumenda harum sint esse dolorem voluptates quod ea optio et amet voluptatem modi iure nulla est, veritatis reiciendis delectus velit deserunt architecto, tenetur odio eaque doloremque porro saepe! Voluptates?

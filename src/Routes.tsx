@@ -18,9 +18,9 @@ const Routes:FC<routesProps> = ({ animIndex }) => {
       <AnimatePresence>
         <Switch key={ location.pathname } location={ location }>
           <Route path="/" element={ <Home /> } />
-          <Route path="/about" element={ <PageWrapper><About /></PageWrapper> } />
-          <Route path="/portfolio" element={ <PageWrapper><Portfolio /></PageWrapper> } />
-          <Route path="/contact" element={ <PageWrapper><Contact /></PageWrapper> } />
+          <Route path="/about" element={ <PageWrapper header="About"><About /></PageWrapper> } />
+          <Route path="/portfolio" element={ <PageWrapper header="Portfolio"><Portfolio /></PageWrapper> } />
+          <Route path="/contact" element={ <PageWrapper header="Contact"><Contact /></PageWrapper> } />
         </Switch>
       </AnimatePresence>
   );
