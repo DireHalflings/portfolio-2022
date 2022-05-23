@@ -17,6 +17,59 @@
   flex: 2;
 }
 
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 4px;
+  overflow: hidden;
+  color: #44adea;
+  height: 100%;
+}
+
+.contact-card__upper {
+  background-color:#44adea;
+  width: 100%;
+  height: 96px;
+  position: relative;
+}
+
+.contact-card__image {
+  display: grid;
+  place-items: center;
+  margin-right: 8px;
+}
+
+.contact-card__image-tag {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  border: 2px solid #0fabc6;
+  object-fit: cover;
+  position: absolute;
+  top: 32px;
+}
+
+.contact-card__lower {
+  width: 100%;
+  flex: 1;
+  padding: 8px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-card-lower__name {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24pt;
+  font-weight: bold;
+  width: 100%;
+  margin-bottom: 64px;
+  font-variant: small-caps;
+}
+
 .contact-card__row {
   display: flex;
   gap: 3em;
@@ -28,26 +81,12 @@
   font-weight: 700;
 }
 
+.contact-card-row__text a {
+  color:#44adea;
+}
+
 .contact-card-row__text {
   flex: 2;
-}
-
-.contact-card-row__icons {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 16px;
-  flex: .5;
-}
-
-.contact-card-row__phone-icon, .contact-card-row__email-icon {
-  color: #75a7ab;
-  cursor: pointer;
-}
-
-.contact-card-row__copy-icon {
-  color: #75a7ab;
-  cursor: pointer;
 }
 
 .contact-form {
@@ -62,6 +101,18 @@
   font-size: 16pt;
 }
 
+.contact-form__name {
+  display: flex;
+}
+
+.contact-form__first-name, .contact-form__last-name {
+  flex: 1;
+}
+
+.contact-form__first-name {
+  margin-right: 4px;
+}
+
 .contact-form-input__text {
   border-radius: 4px;
   padding: 4px 8px;
@@ -69,7 +120,7 @@
 }
 
 .contact-form-input__text:focus {
-  outline: 2px solid rgba(20, 152, 228, 0.795);
+  outline: 2px solid #44adea;
   outline-offset: -2px;
 }
 
@@ -82,7 +133,7 @@
 }
 
 .contact-form-input__text-area:focus {
-  outline: 2px solid rgba(20, 152, 228, 0.795);
+  outline: 2px solid #44adea;
   border-radius: 8px;
 }
 
@@ -97,7 +148,7 @@
   width: 128px;
   padding: 8px 16px;
   color: white;
-  background-color: #0fabc6;
+  background-color: #44adea;
   font-size: 16pt;
   text-transform: uppercase;
   border: none;
@@ -130,18 +181,74 @@
 
 .submitted-message__check {
   background-color: #a2ca42;
-  padding: 16px;
+  padding: 8px;
   border-radius: 50%;
-  width: 64px;
-  height: 64px;
+  width: 32px;
+  height: 32px;
   display: grid;
   place-items: center;
-  font-size: 24pt;
-  margin-right: 16px;
+  font-size: 12pt;
+  margin-right: 8px;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 1465px) {
+  .contact-card__upper {
+    margin-bottom: 64px;
+  }
+  
+  .contact-card-lower__name {
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .contact-card-name__first {
+    margin-right: 8px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .contact__left {
+    flex: .5;
+  }
+
+  .contact-card-lower__name {
+    font-size: 24pt;
+  }
+
+  .contact-card-row__text {
+    font-size: 12pt;
+  }
+
+  .contact__right {
+    flex: 4;
+  }
+}
+
+@media only screen and (max-width: 870px) {
   .contact-content {
     flex-direction: column;
+    margin-bottom: 96px;
+  }
+
+  .contact-card__upper {
+    margin-bottom: 64px;
+  }
+
+  .contact-form__submit {
+    width: 100%;
+  }
+
+  .contact-form__name {
+    flex-direction: column;
+  }
+  
+  .contact-card-row__text {
+    font-size: 12pt;
+  }
+}
+
+@media only screen and (max-width: 200px) {
+  .contact-card-lower__name {
+    content: "SQUISHED!";
   }
 }

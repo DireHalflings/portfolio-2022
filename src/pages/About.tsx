@@ -1,5 +1,6 @@
 import React from 'react';
 import PageTitle from '../components/PageTitle/PageTitle';
+import bryson from '../resources/images/bryson_headshot.jpg';
 
 type AboutProps = {
   
@@ -10,12 +11,15 @@ const About:React.FC<AboutProps> = () => {
   return (
     <div>
       <PageTitle text="About" />
-      <p>Lorem ipsum dolor sit amet.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aspernatur iste fugiat tempore nisi expedita, officiis debitis fuga modi! Quasi quos maxime architecto tempore eveniet porro error illo praesentium earum?
-      Quaerat assumenda harum sint esse dolorem voluptates quod ea optio et amet voluptatem modi iure nulla est, veritatis reiciendis delectus velit deserunt architecto, tenetur odio eaque doloremque porro saepe! Voluptates?
-      In beatae reprehenderit aut autem? Fuga provident soluta mollitia ratione vero. Aliquam id aut quasi iusto corporis perspiciatis pariatur tempora possimus provident, maiores exercitationem. Dolorum ipsum quas saepe sequi quaerat!
-      Saepe corporis quisquam labore id architecto facilis voluptas obcaecati amet aspernatur nisi? Nisi fugit consectetur illum aliquid hic veritatis ipsum animi voluptate cumque, similique, aut vel explicabo iusto tempore maiores?</p>
+      <div className="about">
+        <div className="about-left">
+          <img src={ bryson } alt="Headshot of Bryson in red shirt" />
+        </div>
+        <div className="about-right">
+          <p>Bryson Taylor is a self-taught full-stack web developer that currently resides in Southern California. He has spent much of his career working with the UI/UX design process, frontend technology, both vanilla and frameworks, as well as backend web APIs, such as Node with Express, Golang Gin, and Python Flask. In addition to his contract work, he has also contributed to the web development community through teaching and mentorship. </p>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 export default About;

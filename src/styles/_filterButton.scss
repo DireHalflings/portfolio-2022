@@ -38,3 +38,13 @@
 .filter-button-container.selected {
   outline: 1px solid white;
 }
+
+@media only screen and (max-width: 420px) {
+  .filter-button {
+    font-size: 10pt;
+  }
+
+  .filter-button__logo-img {
+    height: 24px;
+  }
+}

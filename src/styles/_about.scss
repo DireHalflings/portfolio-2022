@@ -1,0 +1,35 @@
+.about {
+  display: flex;
+  justify-content: center;
+}
+
+.about-left {
+  height: 100%;
+  height: 200px;
+  margin-right: 16px;
+}
+
+.about-right {
+  width: 512px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  font-size: 14pt;
+}
+
+.about-left img {
+  height: 100%;
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 900px) {
+  .about {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-right {
+    width: 100%;
+    margin: 8px 16px;
+  }
+}

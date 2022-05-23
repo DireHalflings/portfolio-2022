@@ -1,7 +1,9 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import { fadeAnim } from '../../pages/animations/animations';
 import React from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useWindowSize } from '../../hooks';
+import { fadeAnim } from '../../pages/animations/animations';
 import { Link } from 'react-router-dom';
+
 import ColorName from '../ColorName/ColorName';
 import MobileNav from '../MobileNav/MobileNav';
 
@@ -9,8 +11,23 @@ type PageWrapperProps = {
   header: string
 };
 
-const PageWrapper:React.FC<PageWrapperProps> = ({ children, header }) => {
+const PageWrapper:React.FC<PageWrapperProps> = ({ children }) => {
   
+  const windowWidth = useWindowSize().width || 0;
+
+  const handleMenu = (widthTrigger: number) => {
+    if (windowWidth > widthTrigger) return (
+      <div className="page-wrapper__nav">
+        <Link to ="/">Home</Link>
+        <Link to ="/about">About Me</Link>
+        <Link to ="/Contact">Contact</Link>
+        <Link to ="/Portfolio">Portfolio</Link>
+      </div>
+    );
+
+    return <MobileNav />
+  }
+
   return (
     <div className="page-wrapper">
       <div className="page-wrapper__header">
@@ -22,21 +39,13 @@ const PageWrapper:React.FC<PageWrapperProps> = ({ children, header }) => {
             <ColorName offSet={ 4 } text='TAYLOR' />
           </motion.div>
         </div>
-        <div className="page-wrapper__nav">
-          <Link to ="/">Home</Link>
-          <Link to ="/about">About Me</Link>
-          <Link to ="/Contact">Contact</Link>
-          <Link to ="/Portfolio">Portfolio</Link>
-        </div>
+        { handleMenu(420) }
       </div>
       <AnimatePresence>
         <motion.div variants={ fadeAnim } exit="exit" initial="initial" animate="animate" className="page-wrapper__body">
           { children }
         </motion.div>
       </AnimatePresence>
-      <div className="page-wrapper__mobile-nav">
-        <MobileNav />
-      </div>
     </div>
   )
 }

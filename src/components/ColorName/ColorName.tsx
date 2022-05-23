@@ -22,7 +22,7 @@ const ColorName:React.FC<ColorNameProps> = ({ text, offSet }) => {
   return (
     <div className="color-name">
       {
-        text.split('').map((letter, i) => <ColorLetter bgColor={ getColor(i) } letter={ letter } />)
+        text.split('').map((letter, i) => <ColorLetter key={ letter + i } bgColor={ getColor(i) } letter={ letter } />)
       }
     </div>
   );
