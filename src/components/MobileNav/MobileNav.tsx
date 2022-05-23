@@ -23,9 +23,9 @@ const MobileNav:React.FC<MobileNavProps> = () => {
         <Link className="mobile-menu-link" to="/about">About Me</Link>
         <Link className="mobile-menu-link" to="/contact">Contact Me</Link>
       </div>
-      <div className="mobile-button-container" onClick={ () => setActive(!active) }>
+      <div className="mobile-button-container">
         <div className="mobile-button-bg">
-          <Hamburger size={ 32 } color="#000000" />
+          <Hamburger size={ 32 } color="#000000" toggled={ active } toggle={ setActive } />
         </div>
       </div>
     </div>
