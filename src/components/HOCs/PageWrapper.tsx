@@ -16,6 +16,9 @@ const PageWrapper:React.FC<PageWrapperProps> = ({ children }) => {
   const windowWidth = useWindowSize().width || 0;
 
   const handleMenu = (widthTrigger: number) => {
+
+    console.log("Size Change");
+
     if (windowWidth > widthTrigger) return (
       <div className="page-wrapper__nav">
         <Link to ="/">Home</Link>
@@ -39,7 +42,7 @@ const PageWrapper:React.FC<PageWrapperProps> = ({ children }) => {
             <ColorName offSet={ 4 } text='TAYLOR' />
           </motion.div>
         </div>
-        { handleMenu(420) }
+        { handleMenu(520) }
       </div>
       <AnimatePresence>
         <motion.div variants={ fadeAnim } exit="exit" initial="initial" animate="animate" className="page-wrapper__body">

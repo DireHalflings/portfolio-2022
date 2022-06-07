@@ -99,7 +99,6 @@ const Contact:React.FC<ContactProps> = () => {
             ) : (
               <form 
                 className="contact-form" 
-                action="mailto:brysonttaylor@gmail.com"
                 method="POST"
                 encType="multipart/form-data"
                 name="EmailForm"
@@ -107,23 +106,23 @@ const Contact:React.FC<ContactProps> = () => {
               >
                 <div className="contact-form__name">
                   <div className="contact-form__input contact-form__first-name">
-                    <label htmlFor="name">First Name:</label>
-                    <input className="contact-form-input__text" type="text" placeholder="First Name" {...register("firstName", { required: true })} />
+                    <label className="contact-form__label" htmlFor="name">First Name:</label>
+                    <input className="contact-form-input__text" type="text" {...register("firstName", { required: true })} />
                     {errors.firstName && <span className="contact-form__error">This field is required</span>}
                   </div>
                   <div className="contact-form__input contact-form__last-name">
-                    <label htmlFor="name">Last Name:</label>
-                    <input className="contact-form-input__text" type="text" placeholder="Last Name" {...register("lastName", { required: true })} />
+                    <label className="contact-form__label" htmlFor="name">Last Name:</label>
+                    <input className="contact-form-input__text" type="text" {...register("lastName", { required: true })} />
                     {errors.lastName && <span className="contact-form__error">This field is required</span>}
                   </div>
                 </div>
                 <div className="contact-form__input">
-                  <label htmlFor="name">Email:</label>
-                  <input className="contact-form-input__text" type="email" placeholder="Email" {...register("email", { required: true })} />
+                  <label className="contact-form__label" htmlFor="name">Email:</label>
+                  <input className="contact-form-input__text" type="email" {...register("email", { required: true })} />
                   {errors.email && <span className="contact-form__error">This field is required</span>}
                 </div>
                 <div className="contact-form__input">
-                  <label htmlFor="message">Message:</label>
+                  <label className="contact-form__label" htmlFor="message">Message:</label>
                   <textarea className="contact-form-input__text-area" {...register("message", { required: true })} />
                   {errors.message && <span className="contact-form__error">This field is required</span>}
                 </div>
