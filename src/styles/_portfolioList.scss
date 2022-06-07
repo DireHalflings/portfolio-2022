@@ -119,7 +119,7 @@
   }
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 520px) {
   .portfolio-list__row {
     flex-direction: column;
   }
@@ -135,5 +135,9 @@
   .project-row__anim-image, .project-row__image {
     width: 100%;
     height: 128px;
+  }
+
+  .portfolio-list__row:hover {
+    background-color: #0faac65b;
   }
 }
