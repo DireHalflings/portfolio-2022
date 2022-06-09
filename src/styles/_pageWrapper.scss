@@ -14,8 +14,24 @@
   justify-content: center;
   gap: 64px;
   font-size: 12pt;
+  letter-spacing: 4px;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.page-wrapper-nav__link {
+  color: white;
+  text-decoration: none;
+  background-image: linear-gradient(#ffffff, #ffffff);
+  background-size: 0% 0.1em;
+  background-position-y: 100%;
+  background-position-x: 0%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease-in-out;
+}
+
+.page-wrapper-nav__link:hover, .page-wrapper-nav__link:focus, .page-wrapper-nav__link:active {
+  background-size: 100% 0.1em;
 }
 
 .page-wrapper__body {
@@ -28,6 +44,10 @@
     flex-direction: column;
     align-items: center;
     gap: 0;
+  }
+
+  .page-wrapper__body {
+    margin: 8px 5%;
   }
 
   .page-wrapper__nav {

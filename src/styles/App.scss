@@ -7,6 +7,7 @@
 
 body {
   background-color: #191919;
+  overflow-x: hidden;
 }
 
 a {
@@ -32,3 +33,5 @@ a {
 @import './pageTitle';
 @import './mobileMenu';
 @import './about';
+@import './aboutTechBadges';
+@import './aboutItemsList';

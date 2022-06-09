@@ -25,11 +25,10 @@
 }
 
 .project-row__image-menu {
-  filter: grayscale(1);
   position: absolute;
   right: 0px;
   z-index: 5;
-  width: 4px;
+  width: 26px;
   overflow: hidden;
   transition: 1s ease-in-out;
 
@@ -40,6 +39,7 @@
     font-weight: 700;
   }
 }
+
 
 .project-row__image {
   width: 512px;
@@ -80,6 +80,7 @@
 .image-menu__live-icon, .image-menu__code-icon {
   padding: 4px;
   color: white;
+  min-width: 26px;
 }
 
 .project-row__text {

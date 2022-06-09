@@ -1,0 +1,40 @@
+.about-tech-badge-container {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 4px;
+  user-select: none;
+
+  &:hover {
+    outline: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+.about-tech-badge {
+  display: flex;
+  background-color: #444444;
+  font-size: 8pt;
+  align-items: center;
+  text-align: center;
+  padding: 4px;
+  color: white;
+}
+
+.about-tech-badge__logo {
+  display: flex;
+  align-items: center;
+}
+
+.about-tech-badge__logo-img {
+  height: 16px;
+  padding: 0 2px;
+  object-fit: cover;
+}
+
+.about-tech-badge__text {
+  white-space: nowrap;
+  padding: 4px;
+}
+
+.about-tech-badge-container.selected {
+  outline: 1px solid white;
+}
