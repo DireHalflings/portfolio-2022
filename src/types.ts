@@ -73,3 +73,10 @@ export type Badge = {
   text: string,
   logo: string
 };
+
+export type AboutItem = {
+    date: { start: string, end: string },
+    title: string,
+    location: string,
+    bullets: Array<string>
+  }

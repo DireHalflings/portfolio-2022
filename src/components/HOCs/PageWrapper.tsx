@@ -21,10 +21,10 @@ const PageWrapper:React.FC<PageWrapperProps> = ({ children }) => {
 
     if (windowWidth > widthTrigger) return (
       <div className="page-wrapper__nav">
-        <Link to ="/">Home</Link>
-        <Link to ="/about">About Me</Link>
-        <Link to ="/Contact">Contact</Link>
-        <Link to ="/Portfolio">Portfolio</Link>
+        <Link className="page-wrapper-nav__link" to="/">Home</Link>
+        <Link className="page-wrapper-nav__link" to="/about">About Me</Link>
+        <Link className="page-wrapper-nav__link" to="/Contact">Contact</Link>
+        <Link className="page-wrapper-nav__link" to="/Portfolio">Portfolio</Link>
       </div>
     );
 

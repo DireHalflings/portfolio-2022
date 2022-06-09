@@ -89,7 +89,7 @@ const PortfolioRow:React.FC<PortfolioRowProps> = ({ project, filters, setFilters
               <FontAwesomeIcon icon={ faCode } />
             </div>
             <div className="image-menu__live-text">
-              <a href={ live }>LIVE</a>
+              <a href={ live } target="_blank" rel="noreferrer">LIVE</a>
             </div>
           </div>
           <div className="image-menu__code">
@@ -97,7 +97,7 @@ const PortfolioRow:React.FC<PortfolioRowProps> = ({ project, filters, setFilters
               <FontAwesomeIcon icon={ faCodeBranch }/>
             </div>
             <div className="image-menu__code-text">
-              <a href={ github }>SOURCE</a>
+              <a href={ github } target="_blank" rel="noreferrer">SOURCE</a>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, MutableRefObject } from 'react';
+import { useState, useEffect, MutableRefObject } from 'react';
 
 export const useWindowSize = () => {
   // Initialize state with undefined width/height so server and client renders match
@@ -29,10 +29,12 @@ export const useWindowSize = () => {
 
 export const useMediaQuery = (query: string) => {
   const [matches, setMatches] = useState(false);
+  const windowSize = useWindowSize();
 
   useEffect(() => {
     const media = window.matchMedia(query);
     if (media.matches !== matches) {
+      console.log(media.matches);
       setMatches(media.matches);
     }
     const listener = () => {
@@ -40,7 +42,7 @@ export const useMediaQuery = (query: string) => {
     };
     media.addEventListener("media", listener);
     return () => media.removeEventListener("media", listener);
-  }, [matches, query]);
+  }, [matches, query, windowSize]);
 
   return matches;
 }
