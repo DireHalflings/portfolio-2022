@@ -104,7 +104,7 @@ const projectList: Array<Project> = [
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dolor magni enim rerum repellat veniam iste eveniet dignissimos nesciunt repudiandae.",
     github: "github.com",
     live: "google.com",
-    badges: [""]
+    badges: ["nodejs"]
   },
   {
     name: "Some Test Project",
