@@ -19,13 +19,13 @@ const MobileNav:React.FC<MobileNavProps> = () => {
     <div className="mobile-menu">
       <div className={ `mobile-menu-container ${ handleMobileButtonClass() }` }>
         <Link className="mobile-menu-link" to="/">Home</Link>
-        <Link className="mobile-menu-link" to="/portfolio">Portfolio</Link>
         <Link className="mobile-menu-link" to="/about">About Me</Link>
-        <Link className="mobile-menu-link" to="/contact">Contact Me</Link>
+        <Link className="mobile-menu-link" to="/contact">Contact</Link>
+        <Link className="mobile-menu-link" to="/portfolio">Portfolio</Link>
       </div>
       <div className="mobile-button-container">
         <div className="mobile-button-bg">
-          <Hamburger size={ 32 } color="#000000" toggled={ active } toggle={ setActive } />
+          <Hamburger size={ 32 } color="#ffffff" toggled={ active } toggle={ setActive } />
         </div>
       </div>
     </div>

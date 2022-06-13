@@ -15,8 +15,6 @@ const PortfolioList:React.FC<PortfolioListProps> = ({ filters, setFilters }) => 
 
   const handleFilterProjectList = () => {
     if (filters.length === 0) return projectList;
-    console.log('filters', filters);
-    console.log('project list', projectList);
     return projectList.filter(p => {
       return checkArrayUnion(p.badges, filters.map(f => f.toLowerCase()));
     })
