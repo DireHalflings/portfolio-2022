@@ -137,7 +137,11 @@
 @media only screen and (max-width: 1300px) {
   .about__main-content {
     display: flex;
-    flex-direction:column-reverse;
+    flex-direction:column;
+  }
+
+  .about__skills {
+    margin-top: 0;
   }
 }
 
@@ -155,5 +159,9 @@
 
   .about__left {
     padding: 8px;
+  }
+  
+  .about__main-content {
+    margin-bottom: 96px;
   }
 }

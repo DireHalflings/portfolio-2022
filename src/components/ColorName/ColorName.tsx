@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ColorLetter from './ColorLetter';
 
 type ColorNameProps = {
@@ -15,12 +16,19 @@ const colorDict: Array<string> = [
 ];
 
 const ColorName:React.FC<ColorNameProps> = ({ text, offSet }) => {
+  
+  const navigation = useNavigate();
+
   const getColor = (i: number) => {
     return colorDict[(i + offSet)%colorDict.length];
   }
+
+  const handleOnClick = () => {
+    navigation('/');
+  }
   
   return (
-    <div className="color-name">
+    <div className="color-name" onClick={ handleOnClick }>
       {
         text.split('').map((letter, i) => <ColorLetter key={ letter + i } bgColor={ getColor(i) } letter={ letter } />)
       }

@@ -34,7 +34,6 @@ export const useMediaQuery = (query: string) => {
   useEffect(() => {
     const media = window.matchMedia(query);
     if (media.matches !== matches) {
-      console.log(media.matches);
       setMatches(media.matches);
     }
     const listener = () => {

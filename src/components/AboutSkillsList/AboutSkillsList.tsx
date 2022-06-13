@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 as uuid } from "uuid";
 import AboutTechBadge from '../TechBadge/AboutTechBadge';
 import { Badge } from '../../types';
 import badgesData from '../../resources/data/techBadges';
@@ -17,7 +18,7 @@ const AboutSkillsList:React.FC<AboutListProps> = ({ list, title }) => {
       const foundBadges = badgesData.find(b => b.text.toLowerCase() === badges[i].toLowerCase());
       if (foundBadges !== undefined) tempBadges.push(foundBadges);
     }
-    console.log(tempBadges);
+
     return tempBadges;
   }
   
@@ -26,8 +27,8 @@ const AboutSkillsList:React.FC<AboutListProps> = ({ list, title }) => {
       <div className="about-right-contact__label">{ title }</div>
       <div className="about-right-contact__skills-list">
         {
-          handleTechBadges(list).map(tech => {
-            return <AboutTechBadge text={ tech.text } logo={ tech.logo } />
+          handleTechBadges(list).map((tech) => {
+            return <AboutTechBadge key={ uuid() } text={ tech.text } logo={ tech.logo } />
           })
         }
       </div>

@@ -28,8 +28,6 @@ const Home:React.FC<HomeProps> = () => {
 
   const isSmall = useMediaQuery('(max-width: 520px)');
 
-  console.log(isSmall);
-
   const firstNameAnim = isSmall ? {
     exit: {
       x: 16

@@ -16,9 +16,6 @@ const PageWrapper:React.FC<PageWrapperProps> = ({ children }) => {
   const windowWidth = useWindowSize().width || 0;
 
   const handleMenu = (widthTrigger: number) => {
-
-    console.log("Size Change");
-
     if (windowWidth > widthTrigger) return (
       <div className="page-wrapper__nav">
         <Link className="page-wrapper-nav__link" to="/">Home</Link>
