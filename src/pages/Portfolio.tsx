@@ -37,7 +37,7 @@ const Portfolio:React.FC<PortfolioProps> = () => {
       <div className="portfolio__project-list">
         <div className="portfolio__filter-buttons">
           {
-            activeTechBadges.map(({text, logo}) => <FilterButton key={ uuid() } text={ text } logo={ logo } filters={ filters } setFilters={ setFilters } />)
+            activeTechBadges.sort((a, b) => a.text.localeCompare(b.text)).map(({text, logo}) => <FilterButton key={ uuid() } text={ text } logo={ logo } filters={ filters } setFilters={ setFilters } />)
           }
         </div>
         <PortfolioList filters={ filters } setFilters={ setFilters } />

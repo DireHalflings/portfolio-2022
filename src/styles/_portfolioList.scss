@@ -47,6 +47,7 @@
   object-fit: cover;
   filter: grayscale(1);
   transition: .5s ease-in;
+  border: 1px solid rgb(87, 87, 87);
 }
 
 .project-row__anim-image {
@@ -58,6 +59,7 @@
   object-fit: cover;
   filter: blur(1);
   filter: grayscale(1);
+  border: 1px solid rgb(87, 87, 87);
 }
 
 .image-menu__live, .image-menu__code {
