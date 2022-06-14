@@ -110,7 +110,7 @@ const PortfolioRow:React.FC<PortfolioRowProps> = ({ project, filters, setFilters
         </div>
         <div className="project-row__tech-badges">
           {
-            handleTechBadges().map(({ text, logo }, i) => <TechBadge key={text + i} text={ text } logo={ logo } filters={ filters } setFilters={ setFilters } />)
+            handleTechBadges().sort((a, b) => a.text.localeCompare(b.text)).map(({ text, logo }, i) => <TechBadge key={text + i} text={ text } logo={ logo } filters={ filters } setFilters={ setFilters } />)
           }
         </div>
         <div className="project-row__description">

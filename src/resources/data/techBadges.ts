@@ -31,6 +31,7 @@ import trelloLogo from '../../resources/images/techBadgeImages/trelloLogo.png';
 import asanaLogo from '../../resources/images/techBadgeImages/asanaLogo.png';
 import jiraLogo from '../../resources/images/techBadgeImages/jiraLogo.png';
 import dockerLogo from '../../resources/images/techBadgeImages/dockerLogo.png';
+import framerMotionLogo from '../../resources/images/techBadgeImages/framerMotionLogo.png';
 
 const techBadges: Array<Badge> = [
   {
@@ -216,6 +217,10 @@ const techBadges: Array<Badge> = [
   {
     text: "Jira",
     logo: jiraLogo
+  },
+  {
+    text: "Framer Motion",
+    logo: framerMotionLogo
   }
 ];
 
