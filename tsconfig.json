@@ -6,7 +6,9 @@
       "dom.iterable",
       "esnext"
     ],
-    "typeRoots": ["./src/types"],
+    "typeRoots": [
+      "./src/types"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -20,7 +22,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "preserve"
   },
   "include": [
     "src"
